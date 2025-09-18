@@ -79,7 +79,6 @@ body {
     background-image: url('./assets/home-banner-bg.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
@@ -399,4 +398,28 @@ body {
     margin-right: 0.3rem;
     margin-bottom: 0.3rem;
     font-size: 0.75rem;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #212529 !important;
+    color: #ffffff;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
+
+.footer p {
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* 确保页面布局正确 */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }

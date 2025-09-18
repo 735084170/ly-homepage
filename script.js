@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 项目卡片交互效果
     function setupProjectCards() {
-        const projectCards = document.querySelectorAll('#projects .card');
+        const projectCards = document.querySelectorAll('#misc .card');
         projectCards.forEach(card => {
             const img = card.querySelector('.card-img-top');
             const badges = card.querySelectorAll('.badge');
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentActive = document.querySelector('.custom-nav-link.active');
             if (currentActive) {
                 const currentSection = currentActive.getAttribute('data-section');
-                const sectionIds = ['home', 'about', 'research', 'projects', 'blog'];
+                const sectionIds = ['home', 'about', 'research', 'misc', 'blog'];
                 const currentIndex = sectionIds.indexOf(currentSection);
                 if (currentIndex < sectionIds.length - 1) {
                     smoothScrollTo(sectionIds[currentIndex + 1]);
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentActive = document.querySelector('.custom-nav-link.active');
             if (currentActive) {
                 const currentSection = currentActive.getAttribute('data-section');
-                const sectionIds = ['home', 'about', 'research', 'projects', 'blog'];
+                const sectionIds = ['home', 'about', 'research', 'misc', 'blog'];
                 const currentIndex = sectionIds.indexOf(currentSection);
                 if (currentIndex > 0) {
                     smoothScrollTo(sectionIds[currentIndex - 1]);
