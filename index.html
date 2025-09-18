@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-nav" data-bs-offset="80">
+    <!-- Bootstrap 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light shadow-sm" id="navbar-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">个人主页</a>
+            
+            <!-- 移动端切换按钮 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- 导航菜单 -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active custom-nav-link" href="#home" data-section="home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-nav-link" href="#about" data-section="about">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-nav-link" href="#resume" data-section="resume">RESUME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-nav-link" href="#research" data-section="research">RESEARCH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-nav-link" href="#projects" data-section="projects">PROJECTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-nav-link" href="#blog" data-section="blog">BLOG</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- HOME 部分 - Hero Section -->
+        <section id="home" class="section min-vh-100 d-flex align-items-center bg-primary bg-gradient text-white">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-2 fw-bold mb-4 animate__animated animate__fadeInUp">
+                            欢迎来到我的主页
+                        </h1>
+                        <p class="lead fs-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                            Hello, I'm Your Name
+                        </p>
+                        <p class="fs-5 mb-5 animate__animated animate__fadeInUp animate__delay-2s">
+                            一个简短的自我介绍，展示您的专业背景和特长
+                        </p>
+                        <div class="animate__animated animate__fadeInUp animate__delay-3s">
+                            <a href="#about" class="btn btn-light btn-lg me-3">了解更多</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT 部分 -->
+        <section id="about" class="section py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-4 fw-bold mb-4">关于我</h2>
+                        <p class="lead text-muted">了解我的背景、经历和专业技能</p>
+                    </div>
+                </div>
+                
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="pe-lg-4">
+                            <h3 class="h4 mb-3">个人简介</h3>
+                            <p class="mb-4">
+                                这里是关于我的详细介绍，包括教育背景、工作经历和专业技能。
+                                您可以在这里展示自己的专业能力和个人特色。
+                            </p>
+                            
+                            <!-- 技能标签 -->
+                            <div class="mb-4">
+                                <h5 class="mb-3">专业技能</h5>
+                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary me-2 mb-2">Python</span>
+                                <span class="badge bg-primary me-2 mb-2">React</span>
+                                <span class="badge bg-primary me-2 mb-2">Machine Learning</span>
+                                <span class="badge bg-primary me-2 mb-2">Data Science</span>
+                            </div>
+                            
+                            <!-- 联系方式 -->
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-envelope me-2"></i>邮箱
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-linkedin me-2"></i>LinkedIn
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-github me-2"></i>GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center">
+                            <img src="https://via.placeholder.com/400x500" 
+                                 alt="个人照片" 
+                                 class="img-fluid rounded-3 shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH 部分 -->
+        <section id="research" class="section py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-4 fw-bold mb-4">我的研究</h2>
+                        <p class="lead text-muted">探索前沿技术，推动学术发展</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-lightbulb text-primary fs-3 me-3"></i>
+                                    <h5 class="card-title mb-0">研究项目 1</h5>
+                                </div>
+                                <p class="card-text text-muted">
+                                    人工智能在医疗诊断中的应用研究，探索深度学习在医学影像分析中的前沿技术。
+                                </p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-secondary">AI</span>
+                                    <span class="badge bg-secondary">医疗</span>
+                                    <span class="badge bg-secondary">深度学习</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary btn-sm">了解详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-graph-up text-success fs-3 me-3"></i>
+                                    <h5 class="card-title mb-0">研究项目 2</h5>
+                                </div>
+                                <p class="card-text text-muted">
+                                    大数据分析在金融风控中的应用，开发智能风险评估模型和预警系统。
+                                </p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-secondary">大数据</span>
+                                    <span class="badge bg-secondary">金融</span>
+                                    <span class="badge bg-secondary">风控</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-success btn-sm">了解详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-cpu text-warning fs-3 me-3"></i>
+                                    <h5 class="card-title mb-0">研究项目 3</h5>
+                                </div>
+                                <p class="card-text text-muted">
+                                    边缘计算在物联网中的优化算法研究，提升实时数据处理能力和系统效率。
+                                </p>
+                                <div class="d-flex gap-2 mb-3">
+                                    <span class="badge bg-secondary">边缘计算</span>
+                                    <span class="badge bg-secondary">物联网</span>
+                                    <span class="badge bg-secondary">优化</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-warning btn-sm">了解详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS 部分 -->
+        <section id="projects" class="section py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-4 fw-bold mb-4">我的项目</h2>
+                        <p class="lead text-muted">实践中的技术应用和创新解决方案</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow">
+                            <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="项目1">
+                            <div class="card-body p-4">
+                                <h5 class="card-title">智能推荐系统</h5>
+                                <p class="card-text text-muted">
+                                    基于协同过滤和深度学习的个性化推荐引擎，支持多场景应用。
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-info me-1">Python</span>
+                                        <span class="badge bg-info me-1">TensorFlow</span>
+                                        <span class="badge bg-info">Redis</span>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn btn-primary btn-sm">查看项目</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow">
+                            <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="项目2">
+                            <div class="card-body p-4">
+                                <h5 class="card-title">数据可视化平台</h5>
+                                <p class="card-text text-muted">
+                                    交互式数据分析和可视化工具，支持实时数据展示和多维度分析。
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-success me-1">React</span>
+                                        <span class="badge bg-success me-1">D3.js</span>
+                                        <span class="badge bg-success">Node.js</span>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn btn-success btn-sm">查看项目</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow">
+                            <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="项目3">
+                            <div class="card-body p-4">
+                                <h5 class="card-title">移动端应用</h5>
+                                <p class="card-text text-muted">
+                                    跨平台移动应用，提供流畅的用户体验和完善的功能模块。
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-warning me-1">React Native</span>
+                                        <span class="badge bg-warning me-1">Firebase</span>
+                                        <span class="badge bg-warning">Redux</span>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn btn-warning btn-sm">查看项目</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow">
+                            <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="项目4">
+                            <div class="card-body p-4">
+                                <h5 class="card-title">区块链应用</h5>
+                                <p class="card-text text-muted">
+                                    去中心化应用开发，智能合约设计和区块链技术实践。
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-dark me-1">Solidity</span>
+                                        <span class="badge bg-dark me-1">Web3.js</span>
+                                        <span class="badge bg-dark">Ethereum</span>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn btn-dark btn-sm">查看项目</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG 部分 -->
+        <section id="blog" class="section py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-4 fw-bold mb-4">我的博客</h2>
+                        <p class="lead text-muted">分享技术见解和学习心得</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <article class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-calendar3 text-muted me-2"></i>
+                                    <small class="text-muted">2024-01-15</small>
+                                </div>
+                                <h5 class="card-title">深度学习在自然语言处理中的应用</h5>
+                                <p class="card-text text-muted">
+                                    探讨Transformer架构如何革命性地改变了NLP领域，以及GPT模型的发展历程...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-primary me-1">深度学习</span>
+                                        <span class="badge bg-primary">NLP</span>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">阅读更多</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <article class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-calendar3 text-muted me-2"></i>
+                                    <small class="text-muted">2024-01-10</small>
+                                </div>
+                                <h5 class="card-title">前端性能优化最佳实践</h5>
+                                <p class="card-text text-muted">
+                                    从代码分割到懒加载，从缓存策略到服务端渲染，全面提升Web应用性能...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-success me-1">前端</span>
+                                        <span class="badge bg-success">性能优化</span>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-success btn-sm">阅读更多</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <article class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-calendar3 text-muted me-2"></i>
+                                    <small class="text-muted">2024-01-05</small>
+                                </div>
+                                <h5 class="card-title">微服务架构设计原则</h5>
+                                <p class="card-text text-muted">
+                                    如何设计可扩展、高可用的微服务系统，以及服务间通信的最佳实践...
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-warning me-1">架构</span>
+                                        <span class="badge bg-warning">微服务</span>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-warning btn-sm">阅读更多</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <!-- 分页导航 -->
+                <div class="row mt-5">
+                    <div class="col-12 d-flex justify-content-center">
+                        <nav aria-label="博客分页">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">上一页</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">下一页</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 自定义 JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
