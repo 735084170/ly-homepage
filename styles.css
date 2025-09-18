@@ -74,13 +74,16 @@ body {
 
 /* Hero Section 样式 */
 #home {
-    background-image: url('./assets/background.jpg');
+    /* 备用背景色 */
+    background-color: #667eea;
+    background-image: url('./assets/home-banner-bg.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 /* 灰色蒙版层 */
@@ -236,6 +239,7 @@ body {
     
     #home {
         background-attachment: scroll; /* 移动端使用scroll而不是fixed */
+        background-image: url('./assets/home-banner-bg.webp') !important; /* 确保移动端也使用正确的图片 */
     }
     
     #home h1 {
