@@ -74,11 +74,16 @@ body {
 
 /* Hero Section 样式 */
 #home {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
 }
 
+/* 灰色蒙版层 */
 #home::before {
     content: '';
     position: absolute;
@@ -86,13 +91,24 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a"><stop offset="0" stop-color="%23ffffff" stop-opacity=".1"/><stop offset="1" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
-    opacity: 0.1;
+    background: rgba(0, 0, 0, 0.5); /* 半透明黑色蒙版 */
+    z-index: 1;
 }
 
 #home .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+}
+
+/* 为文字添加轻微阴影以增强可读性 */
+#home h1,
+#home p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+#home .btn {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* 动画效果 */
@@ -216,6 +232,10 @@ body {
     
     .navbar-nav {
         text-align: center;
+    }
+    
+    #home {
+        background-attachment: scroll; /* 移动端使用scroll而不是fixed */
     }
     
     #home h1 {
