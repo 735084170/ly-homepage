@@ -62,8 +62,7 @@ body {
     transform: translateX(-50%);
 }
 
-.custom-nav-link.active::after,
-.custom-nav-link:hover::after {
+.custom-nav-link.active::after {
     width: 80%;
 }
 
@@ -406,11 +405,14 @@ body {
     color: #ffffff;
     font-size: 0.875rem;
     margin-top: auto;
+    padding: 3rem 0 !important; /* 增加上下内边距 */
+    min-height: 120px; /* 设置最小高度 */
 }
 
 .footer p {
     margin-bottom: 0;
     opacity: 0.9;
+    line-height: 1.8; /* 增加行高让文字更舒适 */
 }
 
 /* 确保页面布局正确 */

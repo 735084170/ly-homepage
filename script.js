@@ -37,28 +37,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 更新活动导航项
-    function updateActiveNav() {
-        const scrollPos = window.scrollY + 150; // 增加偏移量
-        let currentSection = '';
+    // 使用Intersection Observer来更准确地判断当前显示的section
+    let currentActiveSection = 'home';
+    
+    function updateActiveNav(sectionId) {
+        if (sectionId && sectionId !== currentActiveSection) {
+            currentActiveSection = sectionId;
+            
+            // 更新导航链接状态
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    }
+    
+    // 统一的导航激活判断：基于当前显示框最上端内容
+    function updateActiveNavByCurrentView() {
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const currentViewTop = window.scrollY + navbarHeight; // 当前显示框的最上端位置
         
+        let currentSection = 'home'; // 默认为home
+        
+        // 遍历所有sections，找到当前显示框最上端对应的section
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
             const sectionId = section.getAttribute('id');
             
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            // 如果当前显示框最上端在这个section范围内，就激活这个导航项
+            if (currentViewTop >= sectionTop && currentViewTop < sectionBottom) {
                 currentSection = sectionId;
             }
         });
         
-        // 更新导航链接状态
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('data-section') === currentSection) {
-                link.classList.add('active');
-            }
-        });
+        updateActiveNav(currentSection);
     }
     
     // 处理导航点击事件
@@ -104,17 +119,68 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
     
-    // 滚动事件监听
+    // 滚动事件监听（处理导航栏背景和导航项激活）
     const throttledScroll = throttle(() => {
         updateNavbarBackground();
-        updateActiveNav();
-    }, 100);
+        updateActiveNavByCurrentView(); // 统一使用显示框最上端判断
+    }, 50);
     
     window.addEventListener('scroll', throttledScroll);
     
     // 页面加载时初始化
     updateNavbarBackground();
-    updateActiveNav();
+    updateActiveNavByCurrentView(); // 基于当前位置初始化
+    
+    // 调试功能：显示当前检测状态（开发时可用）
+    function addDebugInfo() {
+        if (window.location.search.includes('debug=true')) {
+            const debugInfo = document.createElement('div');
+            debugInfo.id = 'debug-info';
+            debugInfo.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                background: rgba(0,0,0,0.8);
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                font-family: monospace;
+                font-size: 12px;
+                z-index: 9999;
+                max-width: 250px;
+            `;
+            document.body.appendChild(debugInfo);
+            
+            // 实时更新调试信息
+            setInterval(() => {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const currentScrollPos = window.scrollY;
+                const currentViewTop = currentScrollPos + navbarHeight;
+                
+                let infoText = `当前滚动位置: ${Math.round(currentScrollPos)}px<br>`;
+                infoText += `导航栏高度: ${Math.round(navbarHeight)}px<br>`;
+                infoText += `显示框最上端: ${Math.round(currentViewTop)}px<br>`;
+                infoText += `当前激活: ${currentActiveSection}<br><br>`;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    const isActive = currentViewTop >= sectionTop && currentViewTop < sectionBottom;
+                    
+                    infoText += `${sectionId}:<br>`;
+                    infoText += `  范围: ${Math.round(sectionTop)}-${Math.round(sectionBottom)}px`;
+                    if (isActive) infoText += ' ⭐ 当前显示';
+                    infoText += '<br><br>';
+                });
+                
+                debugInfo.innerHTML = infoText;
+            }, 100);
+        }
+    }
+    
+    // 启用调试功能
+    addDebugInfo();
     
     // 内容动画观察器
     function setupContentAnimation() {
@@ -288,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 页面可见性API - 当页面重新获得焦点时重新初始化
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
-            updateActiveNav();
+            updateActiveNavByCurrentView();
             updateNavbarBackground();
         }
     });
